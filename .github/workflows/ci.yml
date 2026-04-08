@@ -14,8 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: npm
-      - run: rm -f package-lock.json && npm install
+      - run: npm ci || npm install
       - run: npx eslint . --max-warnings 0
 
   test:
@@ -26,8 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: npm
-      - run: rm -f package-lock.json && npm install
+      - run: npm ci || npm install
       - run: npx vitest run --coverage
 
   secret-scan:
