@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+  "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+  "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- Checkstyle configuration for guardian-test -->
+<!-- Based on Google Java Style with project-specific modifications -->
+<module name="Checker">
+  <property name="charset" value="UTF-8"/>
+  <property name="severity" value="error"/>
+  <property name="fileExtensions" value="java"/>
+
+  <!-- Suppress warnings in generated code -->
+  <module name="SuppressWarningsFilter"/>
+
+  <module name="FileTabCharacter">
+    <property name="eachLine" value="true"/>
+  </module>
+
+  <module name="LineLength">
+    <property name="max" value="120"/>
+    <property name="ignorePattern" value="^package.*|^import.*|a]* href|href|http://|https://|ftp://"/>
+  </module>
+
+  <module name="NewlineAtEndOfFile"/>
+
+  <module name="TreeWalker">
+    <module name="SuppressWarningsHolder"/>
+
+    <!-- Naming conventions -->
+    <module name="PackageName">
+      <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+    </module>
+    <module name="TypeName"/>
+    <module name="MemberName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    </module>
+    <module name="ParameterName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    </module>
+    <module name="LocalVariableName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+    </module>
+    <module name="ConstantName"/>
+    <module name="MethodName"/>
+
+    <!-- Imports -->
+    <module name="AvoidStarImport"/>
+    <module name="UnusedImports"/>
+    <module name="RedundantImport"/>
+
+    <!-- Javadoc -->
+    <module name="JavadocMethod">
+      <property name="severity" value="warning"/>
+      <property name="accessModifiers" value="public"/>
+    </module>
+    <module name="JavadocType">
+      <property name="severity" value="warning"/>
+    </module>
+    <module name="MissingJavadocMethod">
+      <property name="severity" value="warning"/>
+      <property name="scope" value="public"/>
+      <property name="minLineCount" value="10"/>
+    </module>
+
+    <!-- Coding -->
+    <module name="MissingSwitchDefault"/>
+    <module name="FallThrough"/>
+    <module name="EqualsHashCode"/>
+    <module name="SimplifyBooleanExpression"/>
+    <module name="SimplifyBooleanReturn"/>
+    <module name="StringLiteralEquality"/>
+    <module name="NestedIfDepth">
+      <property name="max" value="3"/>
+    </module>
+    <module name="NestedTryDepth">
+      <property name="max" value="2"/>
+    </module>
+    <module name="NoFinalizer"/>
+    <module name="OneStatementPerLine"/>
+    <module name="MultipleVariableDeclarations"/>
+    <module name="EmptyStatement"/>
+
+    <!-- Block checks -->
+    <module name="LeftCurly"/>
+    <module name="RightCurly"/>
+    <module name="NeedBraces"/>
+    <module name="EmptyBlock">
+      <property name="option" value="TEXT"/>
+    </module>
+
+    <!-- Whitespace -->
+    <module name="WhitespaceAround"/>
+    <module name="GenericWhitespace"/>
+    <module name="NoWhitespaceBefore"/>
+    <module name="NoWhitespaceAfter"/>
+
+    <!-- Modifiers -->
+    <module name="ModifierOrder"/>
+    <module name="RedundantModifier"/>
+
+    <!-- Spring Boot: relax Javadoc for controllers and config -->
+    <module name="SuppressionXpathSingleFilter">
+      <property name="checks" value="MissingJavadocMethod"/>
+      <property name="query" value="//CLASS_DEF[./ANNOTATION/IDENT[@text='RestController' or @text='Controller' or @text='Configuration']]//METHOD_DEF"/>
+    </module>
+  </module>
+</module>

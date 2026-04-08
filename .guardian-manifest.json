@@ -1,0 +1,40 @@
+{
+  "version": "1",
+  "generatedAt": "2026-04-08T19:44:01.649Z",
+  "files": [
+    ".editorconfig",
+    ".gitleaks.toml",
+    ".coderabbit.yaml",
+    "GUARDIAN_SETUP.md",
+    "checkstyle.xml",
+    "src/test/resources/junit-platform.properties",
+    "TESTCONTAINERS_SETUP.md",
+    ".github/workflows/ci.yml",
+    ".hooks/pre-commit",
+    ".hooks/commit-msg",
+    "CLAUDE.md",
+    ".claude/commands/pr-review.md",
+    ".claude/commands/pr-triage.md",
+    ".claude/commands/feature-validation.md",
+    ".claude/commands/test-generation.md",
+    ".specify/memory/constitution.md",
+    ".github/pull_request_template.md"
+  ],
+  "config": {
+    "language": "java",
+    "framework": "spring-boot",
+    "ciPlatform": "github-actions",
+    "linter": "checkstyle",
+    "testFramework": "junit5",
+    "staticAnalysis": [],
+    "secretDetection": "gitleaks",
+    "aiReviewTools": [
+      "coderabbit"
+    ],
+    "aiAssistants": [
+      "claude-code"
+    ],
+    "pmIntegration": null,
+    "speckit": true
+  }
+}

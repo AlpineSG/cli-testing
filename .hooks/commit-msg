@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# Conventional commit validation
+# Accepts: feat, fix, chore, refactor, docs, test, ci, style, perf, build, revert
+commit_msg=$(cat "$1")
+pattern="^(feat|fix|chore|refactor|docs|test|ci|style|perf|build|revert)(\(.+\))?(!)?: .{1,100}"
+
+if ! echo "$commit_msg" | grep -qE "$pattern"; then
+  echo "Error: Commit message does not follow Conventional Commits format."
+  echo ""
+  echo "Expected: <type>(<optional scope>): <description>"
+  echo "Types: feat, fix, chore, refactor, docs, test, ci, style, perf, build, revert"
+  echo ""
+  echo "Examples:"
+  echo "  feat: add user authentication"
+  echo "  fix(api): handle null response"
+  echo "  chore: update dependencies"
+  exit 1
+fi
