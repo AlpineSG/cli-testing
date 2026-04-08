@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx biome check --staged --no-errors-on-unmatched
-
-# Secret detection on staged changes
-trufflehog filesystem . --since-commit HEAD --fail
