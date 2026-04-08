@@ -1,12 +1,12 @@
 {
   "version": "1",
-  "generatedAt": "2026-04-08T16:45:03.285Z",
+  "generatedAt": "2026-04-08T16:50:10.387Z",
   "files": [
     ".editorconfig",
     ".gitleaks.toml",
     ".coderabbit.yaml",
     "GUARDIAN_SETUP.md",
-    ".eslintrc.js",
+    ".eslintrc.cjs",
     ".prettierrc",
     "vitest.config.ts",
     "playwright.config.ts",
