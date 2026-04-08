@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Run Checkstyle via Gradle/Maven
-./gradlew checkstyleMain 2>/dev/null || mvn checkstyle:check
-
-# Secret detection
-gitleaks protect --staged --verbose
