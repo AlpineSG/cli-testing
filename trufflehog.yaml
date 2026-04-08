@@ -1,0 +1,12 @@
+# TruffleHog configuration
+# Run: trufflehog filesystem . --config trufflehog.yaml
+detectors:
+  - name: all
+    config: {}
+
+exclude_paths:
+  - node_modules/
+  - .git/
+  - package-lock.json
+  - yarn.lock
+  - pnpm-lock.yaml

@@ -1,0 +1,37 @@
+---
+description: Triage a pull request by checking CI status, review comments, and merge conflicts
+---
+
+# PR Triage
+
+When asked to triage a pull request, follow these steps.
+
+## 1. Check CI Status
+
+Ask the user for the PR number if not provided. Examine all CI check results for the PR. For each failing check, note the check name, status, and any error details.
+
+## 2. Read Review Comments
+
+Examine all review comments on the PR. Identify comments that require action — separate them into blocking (requested changes, unresolved threads) and non-blocking (suggestions, nits).
+
+## 3. Check for Merge Conflicts
+
+Determine whether the PR has merge conflicts. If conflicts exist, identify which files are affected.
+
+## 4. Produce a Triage Report
+
+### CI Status
+List each check with pass/fail status. For failures, summarize the error and suggest a fix.
+
+### Pending Reviews
+List unresolved review comments with file and line references. Suggest how to address each.
+
+### Merge Conflicts
+List conflicting files if any. Suggest a resolution strategy (rebase).
+
+### Recommended Next Steps
+Provide a prioritized action list:
+1. Fix critical CI failures first.
+2. Resolve merge conflicts.
+3. Address blocking review comments.
+4. Respond to non-blocking comments.

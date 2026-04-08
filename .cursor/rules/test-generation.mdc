@@ -1,0 +1,62 @@
+---
+description: Generate comprehensive tests for a file or module
+---
+
+# Test Generation
+
+When asked to generate tests, follow these steps.
+
+## 1. Analyze the Target
+
+Ask the user which file or module to test if not specified. Read the target and identify:
+- All public functions, classes, and methods.
+- Dependencies that need mocking.
+- Edge cases: null/undefined inputs, empty collections, boundary values, error conditions.
+
+## 2. Generate the Test File
+
+Create a test file at `tests/<matching-path>.test.ts` using Jest:
+
+- Use `describe` blocks grouped by function/method.
+- Use `it` with behavior-focused descriptions.
+- Use `jest.mock()` for module mocks and `jest.fn()` for function mocks.
+- Use `beforeEach` for shared setup.
+
+## 3. Test Categories
+
+For each function/method, write tests for:
+- **Happy path** — normal expected usage.
+- **Edge cases** — empty inputs, boundary values, max/min values.
+- **Error handling** — invalid inputs, missing dependencies, failure scenarios.
+- **Integration points** — verify mocks are called with correct arguments.
+
+## 4. Run and Fix
+
+Run `npx jest <test-file>` and fix any failures.
+Re-run until all tests pass.
+
+## 5. E2E / Browser Tests
+
+When the user requests E2E or browser tests, use Cursor's built-in **browser MCP tool** to interact with the running application — do NOT use Playwright or other browser automation libraries directly.
+
+### Using the browser tool
+- `mcp_browser_navigate({ url })` — navigate to a page
+- `mcp_browser_click({ selector })` — click an element
+- `mcp_browser_fill({ selector, value })` — fill an input field
+- `mcp_browser_screenshot()` — capture the current page state
+- `mcp_browser_evaluate({ expression })` — run JavaScript in the page context
+
+### Workflow
+1. Ask the user to confirm the app is running locally and at which URL.
+2. Use `mcp_browser_navigate` to load the target page.
+3. For each user flow or acceptance criterion:
+   - Interact with the page using browser tool calls (click, fill, etc.).
+   - Use `mcp_browser_screenshot` to visually verify state.
+   - Use `mcp_browser_evaluate` to assert DOM state or values.
+4. Report results for each scenario tested.
+
+This approach runs tests interactively in a real browser session — no test framework config or dependencies needed.
+
+## 6. Report
+
+List the tests generated with a brief description of each. Report pass/fail status and note any functions that were difficult to test.

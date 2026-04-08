@@ -1,0 +1,43 @@
+{
+  "version": "1",
+  "generatedAt": "2026-04-08T19:47:56.866Z",
+  "files": [
+    ".editorconfig",
+    "trufflehog.yaml",
+    ".github/copilot-review-instructions.md",
+    "GUARDIAN_SETUP.md",
+    "biome.json",
+    "jest.config.js",
+    "cypress.config.ts",
+    ".github/workflows/ci.yml",
+    ".husky/pre-commit",
+    ".husky/commit-msg",
+    "lint-staged.config.js",
+    ".commitlintrc.json",
+    ".cursor/rules/project.mdc",
+    ".cursor/rules/language.mdc",
+    ".cursor/rules/pr-review.mdc",
+    ".cursor/rules/pr-triage.mdc",
+    ".cursor/rules/feature-validation.mdc",
+    ".cursor/rules/test-generation.mdc",
+    ".specify/memory/constitution.md",
+    ".github/pull_request_template.md"
+  ],
+  "config": {
+    "language": "typescript",
+    "framework": "nextjs",
+    "ciPlatform": "github-actions",
+    "linter": "biome",
+    "testFramework": "jest",
+    "staticAnalysis": [],
+    "secretDetection": "trufflehog",
+    "aiReviewTools": [
+      "copilot-review"
+    ],
+    "aiAssistants": [
+      "cursor"
+    ],
+    "pmIntegration": null,
+    "speckit": true
+  }
+}
