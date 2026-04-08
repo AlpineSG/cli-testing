@@ -1,0 +1,14 @@
+---
+description: TypeScript/JavaScript specific rules
+globs: "*.ts,*.tsx,*.js,*.jsx"
+alwaysApply: false
+---
+
+# TypeScript/JavaScript Rules
+
+- Use strict TypeScript types — avoid `any`
+- Handle all Promise rejections with try/catch or .catch()
+- Use `undefined` over `null` where possible
+- Functional components only — no class components
+- Extract custom hooks for shared stateful logic
+- Use `useMemo`/`useCallback` only when profiling shows a need

@@ -1,0 +1,16 @@
+---
+engines:
+  eslint:
+    enabled: true
+  jshint:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript
+exclude_paths:
+  - "node_modules/**"
+  - "dist/**"
+  - "coverage/**"
+  - "*.min.js"
