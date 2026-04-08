@@ -1,0 +1,43 @@
+{
+  "version": "1",
+  "generatedAt": "2026-04-08T16:45:03.285Z",
+  "files": [
+    ".editorconfig",
+    ".gitleaks.toml",
+    ".coderabbit.yaml",
+    "GUARDIAN_SETUP.md",
+    ".eslintrc.js",
+    ".prettierrc",
+    "vitest.config.ts",
+    "playwright.config.ts",
+    ".github/workflows/ci.yml",
+    ".husky/pre-commit",
+    ".husky/commit-msg",
+    "lint-staged.config.js",
+    ".commitlintrc.json",
+    "CLAUDE.md",
+    ".claude/commands/pr-review.md",
+    ".claude/commands/pr-triage.md",
+    ".claude/commands/feature-validation.md",
+    ".claude/commands/test-generation.md",
+    ".specify/memory/constitution.md",
+    ".github/pull_request_template.md"
+  ],
+  "config": {
+    "language": "typescript",
+    "framework": "react",
+    "ciPlatform": "github-actions",
+    "linter": "eslint-prettier",
+    "testFramework": "vitest",
+    "staticAnalysis": [],
+    "secretDetection": "gitleaks",
+    "aiReviewTools": [
+      "coderabbit"
+    ],
+    "aiAssistants": [
+      "claude-code"
+    ],
+    "pmIntegration": null,
+    "speckit": true
+  }
+}
