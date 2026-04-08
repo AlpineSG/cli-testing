@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Run golangci-lint on staged .go files
+golangci-lint run --new-from-rev=HEAD
+
+# Secret detection
+gitleaks protect --staged --verbose

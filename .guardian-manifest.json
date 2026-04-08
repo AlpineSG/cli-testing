@@ -1,0 +1,39 @@
+{
+  "version": "1",
+  "generatedAt": "2026-04-08T17:18:33.310Z",
+  "files": [
+    ".editorconfig",
+    ".gitleaks.toml",
+    ".coderabbit.yaml",
+    "GUARDIAN_SETUP.md",
+    ".golangci.yml",
+    "TESTCONTAINERS_SETUP.md",
+    ".github/workflows/ci.yml",
+    ".hooks/pre-commit",
+    ".hooks/commit-msg",
+    "CLAUDE.md",
+    ".claude/commands/pr-review.md",
+    ".claude/commands/pr-triage.md",
+    ".claude/commands/feature-validation.md",
+    ".claude/commands/test-generation.md",
+    ".specify/memory/constitution.md",
+    ".github/pull_request_template.md"
+  ],
+  "config": {
+    "language": "go",
+    "framework": "none",
+    "ciPlatform": "github-actions",
+    "linter": "golangci-lint",
+    "testFramework": "go-test",
+    "staticAnalysis": [],
+    "secretDetection": "gitleaks",
+    "aiReviewTools": [
+      "coderabbit"
+    ],
+    "aiAssistants": [
+      "claude-code"
+    ],
+    "pmIntegration": null,
+    "speckit": true
+  }
+}
