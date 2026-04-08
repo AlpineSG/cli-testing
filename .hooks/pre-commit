@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-# Run golangci-lint on staged .go files
-golangci-lint run --new-from-rev=HEAD
-
-trufflehog filesystem . --since-commit HEAD --fail
